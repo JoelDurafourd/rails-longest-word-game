@@ -1,0 +1,13 @@
+<h1>New game</h1>
+
+<tr>
+  <% @letters.each do |letter| %>
+    <th><%= letter.capitalize %></th>
+  <% end %>
+</tr>
+
+<form action="score" data-turbo="false" authenticity_token: true >
+  <%= hidden_field_tag :letters, @letters %>
+  <input type="text" name="new">
+  <input type="submit" value="Answer!">
+</form>
